@@ -1,0 +1,191 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gray-50 min-h-screen;
+    background-attachment: fixed;
+  }
+  
+  * {
+    @apply antialiased;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@layer components {
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+  }
+  
+  .live-pulse {
+    animation: pulse 2s ease-in-out infinite;
+  }
+  
+  .modern-card {
+    @apply bg-white rounded-2xl shadow-md border border-blue-100;
+    @apply transition-all duration-300 hover:border-blue-300 hover:shadow-lg;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .modern-button {
+    @apply px-5 py-2.5 rounded-lg font-medium transition-all duration-200;
+    @apply bg-blue-50 text-blue-700 hover:bg-blue-100 border border-blue-200;
+    @apply focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-white;
+  }
+  
+  .modern-button-primary {
+    @apply bg-blue-600 hover:bg-blue-700 border-blue-600 text-white shadow-sm;
+  }
+  
+  .filter-button {
+    @apply px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200;
+    @apply bg-blue-50 text-blue-700 hover:bg-blue-100 border border-blue-200;
+    @apply focus:outline-none focus:ring-2 focus:ring-blue-500;
+  }
+  
+  .filter-button-active {
+    @apply bg-blue-600 text-white border-blue-600 hover:bg-blue-700 shadow-sm;
+  }
+  
+  .animate-fade-in {
+    animation: fade-in 0.4s ease-out forwards;
+  }
+  
+  .animate-scale-in {
+    animation: scale-in 0.2s ease-out forwards;
+  }
+  
+  .animate-slide-down {
+    animation: slide-down 0.3s ease-out forwards;
+  }
+  
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-100;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-400 rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-500;
+  }
+  
+  /* Focus visible for accessibility */
+  *:focus-visible {
+    @apply outline-2 outline-offset-2 outline-blue-500 rounded;
+  }
+  
+  /* Loading skeleton */
+  .skeleton {
+    @apply bg-gray-200 animate-pulse rounded;
+  }
+  
+  /* Card stagger animation */
+  .stagger-item {
+    opacity: 0;
+    animation: fade-in 0.4s ease-out forwards;
+  }
+  
+  .stagger-item:nth-child(1) { animation-delay: 0.05s; }
+  .stagger-item:nth-child(2) { animation-delay: 0.1s; }
+  .stagger-item:nth-child(3) { animation-delay: 0.15s; }
+  .stagger-item:nth-child(4) { animation-delay: 0.2s; }
+  .stagger-item:nth-child(5) { animation-delay: 0.25s; }
+  .stagger-item:nth-child(6) { animation-delay: 0.3s; }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
