@@ -33,21 +33,13 @@ npm install
      - Cricket API key from [cricapi.com](https://www.cricapi.com/)
      - API Sports key from [api-sports.io](https://api-sports.io/)
 
-3. (Optional) Configure EmailJS for Password Reset:
-   - See `EMAILJS_SETUP.md` for detailed instructions
-   - Create a `.env` file with your EmailJS credentials:
-     ```env
-     VITE_EMAILJS_SERVICE_ID=your_service_id
-     VITE_EMAILJS_TEMPLATE_ID=your_template_id
-     VITE_EMAILJS_PUBLIC_KEY=your_public_key
-     ```
 
-4. Start the development server:
+3. Start the development server:
 ```bash
 npm run dev
 ```
 
-5. Open your browser and navigate to `http://localhost:5173`
+4. Open your browser and navigate to `http://localhost:5173`
 
 ### Build for Production
 
