@@ -88,6 +88,3 @@ krideX/
 - Vite 5
 - CricAPI
 
-## License
-
-MIT
